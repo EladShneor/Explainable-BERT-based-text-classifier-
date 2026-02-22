@@ -1,7 +1,4 @@
 # Explainable-BERT-based-text-classifier-
-Here is the project README formatted specifically for GitHub. It includes structured sections, technical explanations of your heads, and clear placeholders for your visualizations.
-
-# Subreddit Rule Violation Detector: Explainable NLP
 
 ## Project Overview
 
@@ -18,7 +15,7 @@ We developed three distinct classification heads to compare different methods of
 | **CNN Head** | 1D-Convolution (Filters: 4, 6, 8, 10) | Identifies **local n-grams** and specific phrase-based violations. |
 | **Attention Head** | Trainable Weighted Pooling | Acts as a **"Detective,"** highlighting specific keywords across the text. |
 
-### Standard BERT vs CNN Head Model core difference diagram 
+### Standard BERT vs CNN Head Model High-Level Architectural Schematic:
 <img width="1012" height="313" alt="image" src="https://github.com/user-attachments/assets/75cf62ee-e5eb-41ca-a053-ed82a8e6647b" />
 <img width="1024" height="290" alt="image" src="https://github.com/user-attachments/assets/346cd580-09e6-4d77-8e41-0f4145efafb8" />
 
@@ -65,4 +62,3 @@ We implemented a specialized training loop to solve the "CNN Bottleneck" and pre
 * **Error Analysis:** Includes scripts to isolate False Positives and visualize model "confusion."
 * **Lightweight:** Based on BERT-Tiny, making it fast enough to run on standard consumer GPUs or Google Colab.
 
----
