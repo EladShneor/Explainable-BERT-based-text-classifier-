@@ -1,6 +1,6 @@
 # Explainable-BERT-based-text-classifier-
 
-## Project Overview
+## Notebook Overview
 
 This project addresses the complex task of **Conditional Rule Violation Detection**. Unlike standard toxicity filters that look for "bad words," this model evaluates a Reddit comment based on a specific provided rule and subreddit context.
 By utilizing **BERT-Tiny** as a backbone and implementing custom architectural "heads," we achieve high precision while providing **explainability**—allowing us to see why a comment was flagged.
