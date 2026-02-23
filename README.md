@@ -48,19 +48,19 @@ To handle the complexity of rule-based classification, the data was structured i
 * **Sequence Length:** Optimized at **128 tokens** to balance context and computational efficiency.
 
 
-## Training Strategy: Two-Stage Fine-Tuning
+## Training Strategy: 
 
-We implemented a specialized training loop to solve the "CNN Bottleneck" and prevent BERT from "scrambling" its pre-trained knowledge:
+We implemented Two-Stage Fine-Tuning,  a specialized training loop to solve the "CNN Bottleneck" and prevent BERT from "scrambling" its pre-trained knowledge:
 
 1. **Stage 1: Head Warmup (Frozen BERT)**
 * BERT is frozen.
 * Head trained with a higher Learning Rate ().
 
-
 2. **Stage 2: Full Fine-Tuning (Unfrozen BERT)**
 * BERT is unfrozen.
 * Global Learning Rate reduced to  with **Gradient Clipping** to ensure stability.
 
+This approche found to be not useful in small number of epochs. 
 
 ##  Key Features
 
