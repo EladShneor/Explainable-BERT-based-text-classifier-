@@ -45,26 +45,10 @@ To handle the complexity of rule-based classification, the data was structured i
 `Rule [SEP] Subreddit [SEP] Comment`
 
 * **Dataset Size:** Scaled from 1,600 to **10,000 samples** using Easy Data Augmentation (EDA).
-* **Sequence Length:** Optimized at **128 tokens** to balance context and computational efficiency.
-
-
-## Training Strategy: 
-
-We implemented Two-Stage Fine-Tuning,  a specialized training loop to solve the "CNN Bottleneck" and prevent BERT from "scrambling" its pre-trained knowledge:
-
-1. **Stage 1: Head Warmup (Frozen BERT)**
-* BERT is frozen.
-* Head trained with a higher Learning Rate ().
-
-2. **Stage 2: Full Fine-Tuning (Unfrozen BERT)**
-* BERT is unfrozen.
-* Global Learning Rate reduced to  with **Gradient Clipping** to ensure stability.
-
-This approche found to be not useful in small number of epochs. 
+* **Sequence Length:** Optimized at **128 tokens** to balance context and computational efficiency. 
 
 ##  Key Features
 
-* **Modular Design:** Easily switch between CNN, Attention, and Standard heads.
-* **Error Analysis:** Includes scripts to isolate False Positives and visualize model "confusion."
+* **Modular Design:** Different classification heads - CNN, Attention, and Standard heads, including two options for training strategy (Reguler or Two-Stage Fine-Tuning)
+* **Error Analysis:** Includes scripts to isolate False Positives and visualize model "confusion
 * **Lightweight:** Based on BERT-Tiny, making it fast enough to run on standard consumer GPUs or Google Colab.
-
